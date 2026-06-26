@@ -277,8 +277,6 @@
       gap: .75rem;
       margin-bottom: 1.5rem;
     }
-    .hero-eyebrow .bow { font-size: 1.4rem; animation: bow-sway 3s ease-in-out infinite; }
-    @keyframes bow-sway { 0%,100%{transform:rotate(-8deg)} 50%{transform:rotate(8deg)} }
 
     .hero-headline {
       font-family: var(--ff-head);
@@ -747,6 +745,7 @@
       transition: var(--transition);
       border: 1.5px solid rgba(251,244,232,.4);
       min-height: 90px;
+      overflow: hidden;
     }
     .brand-card:hover {
       background: var(--cream);
@@ -1041,7 +1040,7 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
+      .nav-links, .nav-cta, .nav-socials { display: none; }
       .hamburger { display: flex; }
 
       .hero {
@@ -1053,8 +1052,12 @@
         height: 60vw;
         min-height: 320px;
         max-height: 480px;
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 0;
         order: -1;
+        margin-top: 1rem;
+      }
+      .hero-content {
+        padding-top: 2.5rem;
       }
       .hero-photo-blob {
         width: min(300px, 80%);
@@ -1073,6 +1076,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-img-wrap { order: -1; }
       .about-accent-card { right: 0; top: 50%; transform: translateY(-50%); }
+      .about-img-card img { object-position: center 25%; }
 
       .services-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1095,6 +1099,8 @@
       .hero-stats { gap: 1.25rem; }
       .hero-stat-num { font-size: 1.3rem; }
       .hero-badge { display: none; }
+      .brand-card { padding: 1rem; min-height: 75px; }
+      .brand-card img { max-width: 90px; max-height: 40px; }
     }
 
     /* ─── SKIP NAV (WCAG 2.1) ───────────────────────────────── */
@@ -1390,7 +1396,6 @@
 <section class="hero" id="home">
   <div class="hero-content container" style="padding-left: max(1.5rem, calc((100vw - 1200px)/2 + 1.5rem)); padding-right: 1.5rem;">
     <div class="hero-eyebrow reveal">
-      <span class="bow">🎀</span>
       <span class="section-label">Cambridgeshire, UK · 715K Followers</span>
     </div>
     <h1 class="hero-headline reveal reveal-delay-1">
