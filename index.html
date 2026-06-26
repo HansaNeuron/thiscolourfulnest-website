@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This Colourful Nest — Sophia Ferrari-Wills</title>
+  <meta name="description" content="Sophia Ferrari-Wills is the UK's leading pastel maximalist creator. 715K followers. Content creator, stylist & UGC specialist based in Cambridgeshire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ───────────────────────────────────────────── */
+    :root {
+      --blush:   #F2AABF;
+      --yellow:  #F6D97F;
+      --sage:    #A8C9A2;
+      --cream:   #FBF4E8;
+      --cocoa:   #5A3445;
+      --cocoa-light: #7a4d63;
+      --white:   #ffffff;
+
+      --ff-head: 'Cormorant Garamond', Georgia, serif;
+      --ff-body: 'DM Sans', system-ui, sans-serif;
+      --ff-script: 'Dancing Script', cursive;
+
+      --radius: 2rem;
+      --radius-sm: 1rem;
+
+      --shadow: 0 8px 40px rgba(90,52,69,.10);
+      --shadow-lg: 0 20px 60px rgba(90,52,69,.15);
+
+      --transition: 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ─── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--cocoa);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+
+    /* ─── SCROLLBAR ──────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 99px; }
+
+    /* ─── UTILITIES ──────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section-label {
+      font-family: var(--ff-body);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cocoa-light);
+      opacity: .7;
+    }
+    .script { font-family: var(--ff-script); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 99px;
+      font-family: var(--ff-body);
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--cocoa);
+      color: var(--cream);
+    }
+    .btn-primary:hover {
+      background: var(--cocoa-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--cocoa);
+      border: 1.5px solid var(--cocoa);
+    }
+    .btn-outline:hover {
+      background: var(--blush);
+      border-color: var(--blush);
+      transform: translateY(-2px);
+    }
+    .btn-blush {
+      background: var(--blush);
+      color: var(--cocoa);
+    }
+    .btn-blush:hover {
+      background: #ec97b0;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* animate-in */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 0;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+    }
+    .nav.scrolled {
+      background: rgba(251,244,232,.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(90,52,69,.08);
+      padding: .85rem 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-logo {
+      font-family: var(--ff-script);
+      font-size: 1.5rem;
+      color: var(--cocoa);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: .85rem;
+      font-weight: 400;
+      letter-spacing: .05em;
+      color: var(--cocoa);
+      opacity: .75;
+      transition: opacity var(--transition);
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { flex-shrink: 0; }
+    .nav-cta .btn { padding: .6rem 1.4rem; font-size: .82rem; }
+
+    /* nav social icons */
+    .nav-socials {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex-shrink: 0;
+    }
+    .nav-social-link {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(90,52,69,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cocoa);
+      transition: var(--transition);
+    }
+    .nav-social-link svg { width: 14px; height: 14px; fill: currentColor; }
+    .nav-social-link:hover {
+      background: var(--blush);
+      border-color: var(--blush);
+      color: var(--cocoa);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      .nav-socials { gap: .35rem; }
+      .nav-social-link { width: 28px; height: 28px; }
+      .nav-social-link svg { width: 12px; height: 12px; }
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--cocoa);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--cream);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--ff-head);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--cocoa);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--blush); }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* decorative bg blobs */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(242,170,191,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(246,217,127,.20) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      padding: 4rem 3rem 4rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow .bow { font-size: 1.4rem; animation: bow-sway 3s ease-in-out infinite; }
+    @keyframes bow-sway { 0%,100%{transform:rotate(-8deg)} 50%{transform:rotate(8deg)} }
+
+    .hero-headline {
+      font-family: var(--ff-head);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: var(--cocoa);
+      margin-bottom: 1.75rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--blush);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--cocoa);
+      opacity: .75;
+      max-width: 44ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(90,52,69,.12);
+    }
+    .hero-stat-num {
+      font-family: var(--ff-head);
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--cocoa);
+    }
+    .hero-stat-label {
+      font-size: .75rem;
+      opacity: .6;
+      margin-top: .2rem;
+      letter-spacing: .04em;
+    }
+
+    /* hero photo */
+    .hero-image-wrap {
+      position: relative;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 2rem 2rem 0;
+    }
+    .hero-photo-blob {
+      position: relative;
+      width: min(480px, 92%);
+      aspect-ratio: 4/5;
+    }
+    .hero-photo-blob::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      background: var(--blush);
+      border-radius: 50% 50% 50% 50% / 38% 38% 38% 38%;
+      opacity: .35;
+      z-index: 0;
+      animation: blob-morph 8s ease-in-out infinite;
+    }
+    @keyframes blob-morph {
+      0%,100% { border-radius: 50% 50% 50% 50% / 38% 38% 38% 38%; }
+      33%      { border-radius: 48% 52% 52% 48% / 36% 40% 40% 36%; }
+      66%      { border-radius: 52% 48% 48% 52% / 40% 36% 36% 40%; }
+    }
+    .hero-photo-blob img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 20%;
+      border-radius: 50% 50% 50% 50% / 38% 38% 38% 38%;
+      animation: blob-morph 8s ease-in-out infinite;
+    }
+    /* Fallback gradient when image not yet added */
+    .hero-photo-blob .photo-fallback {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--blush) 0%, #f7c8d5 40%, var(--yellow) 100%);
+      border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+      animation: blob-morph 8s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo-blob img + .photo-fallback { display: none; }
+
+    /* floating badges */
+    .hero-badge {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: .75rem 1.1rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      z-index: 2;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero-badge-1 {
+      top: 18%; left: -40px;
+      animation-delay: 0s;
+    }
+    .hero-badge-2 {
+      bottom: 22%; right: -30px;
+      animation-delay: 2s;
+    }
+    .badge-icon { font-size: 1.4rem; }
+    .badge-text { font-size: .78rem; line-height: 1.3; }
+    .badge-text strong { display: block; font-weight: 500; }
+
+    /* ─── PRESS BAR ──────────────────────────────────────────── */
+    .press-bar {
+      background: var(--cocoa);
+      padding: 1.4rem 0;
+      overflow: hidden;
+    }
+    .press-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .press-track {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      animation: scroll-press 20s linear infinite;
+      white-space: nowrap;
+      min-width: max-content;
+    }
+    @keyframes scroll-press {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .press-track:hover { animation-play-state: paused; }
+    .press-item {
+      font-family: var(--ff-head);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(251,244,232,.7);
+      letter-spacing: .06em;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .press-item::after {
+      content: '🎀';
+      font-size: .85rem;
+      opacity: .6;
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    .about {
+      padding: 4rem 0 8rem;
+      position: relative;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: linear-gradient(160deg, #f7c8d5 0%, var(--blush) 50%, #e896b0 100%);
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .about-img-inner {
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(90,52,69,.6) 0%, rgba(90,52,69,.1) 70%, transparent 100%);
+    }
+    .about-img-quote {
+      font-family: var(--ff-head);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.45;
+    }
+    .about-accent-card {
+      position: absolute;
+      top: 50%; right: -1.5rem;
+      transform: translateY(-50%);
+      background: var(--yellow);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      max-width: 185px;
+      text-align: center;
+      z-index: 2;
+    }
+    .about-img-card {
+      position: relative;
+      z-index: 1;
+    }
+    .about-accent-num {
+      font-family: var(--ff-head);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--cocoa);
+      line-height: 1;
+    }
+    .about-accent-text {
+      font-size: .8rem;
+      color: var(--cocoa);
+      opacity: .7;
+      margin-top: .35rem;
+    }
+
+    .about-content .section-label { margin-bottom: 1.25rem; }
+    .about-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .about-heading em { font-style: italic; color: var(--blush); }
+    .about-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: .8;
+      margin-bottom: 1rem;
+    }
+    .about-body:last-of-type { margin-bottom: 2rem; }
+
+    /* ─── SERVICES ───────────────────────────────────────────── */
+    .services {
+      padding: 7rem 0;
+      background: var(--blush);
+      position: relative;
+      overflow: hidden;
+    }
+    .services::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 0; right: 0;
+      height: 120px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+    .services::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 0; right: 0;
+      height: 120px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .services-inner { position: relative; z-index: 1; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header .section-label { display: block; margin-bottom: 1rem; }
+    .section-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cocoa);
+    }
+    .section-heading em { font-style: italic; color: var(--cocoa); }
+    .section-sub {
+      font-size: 1rem;
+      opacity: .7;
+      max-width: 50ch;
+      margin: 1rem auto 0;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: rgba(251,244,232,.85);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 2.25rem 1.75rem;
+      transition: var(--transition);
+      border: 1.5px solid rgba(251,244,232,.4);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      background: var(--cream);
+    }
+    .service-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .service-name {
+      font-family: var(--ff-head);
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: .75rem;
+      line-height: 1.2;
+    }
+    .service-desc {
+      font-size: .9rem;
+      line-height: 1.7;
+      opacity: .75;
+    }
+
+    /* ─── STATS ──────────────────────────────────────────────── */
+    .stats {
+      padding: 7rem 0;
+    }
+    .stats-header { text-align: center; margin-bottom: 4rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .stat-card {
+      text-align: center;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem 1.5rem;
+      border: 1.5px solid rgba(242,170,191,.3);
+      transition: var(--transition);
+    }
+    .stat-card:hover {
+      border-color: var(--blush);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .stat-platform {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: .55;
+      margin-bottom: .75rem;
+    }
+    .stat-number {
+      font-family: var(--ff-head);
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--cocoa);
+      margin-bottom: .5rem;
+    }
+    .stat-detail {
+      font-size: .82rem;
+      opacity: .6;
+    }
+    .stat-card-highlight {
+      background: var(--cocoa);
+      border-color: var(--cocoa);
+    }
+    .stat-card-highlight .stat-platform,
+    .stat-card-highlight .stat-number,
+    .stat-card-highlight .stat-detail {
+      color: var(--cream);
+      opacity: 1;
+    }
+    .stat-card-highlight .stat-platform { opacity: .65; }
+    .stat-card-highlight .stat-detail { opacity: .7; }
+
+    .stats-note {
+      text-align: center;
+      font-size: .85rem;
+      opacity: .55;
+    }
+
+    /* ─── PORTFOLIO ──────────────────────────────────────────── */
+    .portfolio {
+      padding: 3rem 0 7rem;
+      background: var(--cream);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .ig-embed-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      height: 600px;
+      display: flex;
+      align-items: stretch;
+    }
+    .ig-embed-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .ig-embed-wrap blockquote.instagram-media {
+      border-radius: var(--radius) !important;
+      min-width: 100% !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+
+    .portfolio-cta { text-align: center; }
+
+    /* ─── BRANDS ─────────────────────────────────────────────── */
+    .brands {
+      padding: 6rem 0;
+      background: var(--yellow);
+      position: relative;
+      overflow: hidden;
+    }
+    .brands::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 0; right: 0;
+      height: 120px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+    .brands-inner { position: relative; z-index: 1; }
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .brand-card {
+      background: rgba(251,244,232,.8);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      border: 1.5px solid rgba(251,244,232,.4);
+      min-height: 90px;
+    }
+    .brand-card:hover {
+      background: var(--cream);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .brand-card img {
+      max-width: 130px;
+      max-height: 50px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      opacity: .8;
+      transition: opacity var(--transition);
+    }
+    .brand-card:hover img { opacity: 1; }
+
+    /* ─── AWARD BANNER ───────────────────────────────────────── */
+    .award-banner {
+      background: var(--cocoa);
+      padding: 4rem 0;
+    }
+    .award-inner {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      flex-direction: column;
+    }
+    .award-icon { font-size: 4rem; }
+    .award-heading {
+      font-family: var(--ff-head);
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.3;
+    }
+    .award-sub {
+      font-size: .9rem;
+      color: var(--cream);
+      opacity: .6;
+      margin-top: .5rem;
+      letter-spacing: .05em;
+    }
+
+    /* ─── TESTIMONIAL ────────────────────────────────────────── */
+    .testimonial {
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(242,170,191,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .testimonial-quote-mark {
+      font-family: var(--ff-head);
+      font-size: 8rem;
+      line-height: .5;
+      color: var(--blush);
+      opacity: .4;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .testimonial-text {
+      font-family: var(--ff-head);
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      max-width: 820px;
+      margin: 0 auto 2.5rem;
+      color: var(--cocoa);
+    }
+    .testimonial-attribution {
+      font-size: .85rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .55;
+    }
+
+    /* ─── CONTACT ────────────────────────────────────────────── */
+    .contact {
+      padding: 7rem 0;
+      background: var(--blush);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 0; right: 0;
+      height: 120px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+    .contact-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-content .section-label { margin-bottom: 1rem; }
+    .contact-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .contact-heading em { font-style: italic; }
+    .contact-body {
+      font-size: .95rem;
+      line-height: 1.8;
+      opacity: .8;
+      margin-bottom: 1.5rem;
+    }
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      margin-top: 1.5rem;
+    }
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .9rem;
+    }
+    .contact-option-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1.5px solid rgba(90,52,69,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--cocoa);
+    }
+    .contact-option-icon svg {
+      width: 16px; height: 16px;
+      fill: currentColor;
+    }
+
+    .contact-form-wrap {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      margin-bottom: .5rem;
+      opacity: .7;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: .85rem 1.1rem;
+      border: 1.5px solid rgba(90,52,69,.15);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      font-family: var(--ff-body);
+      font-size: .9rem;
+      color: var(--cocoa);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      appearance: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--blush);
+      box-shadow: 0 0 0 3px rgba(242,170,191,.2);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { width: 100%; justify-content: center; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--cocoa);
+      padding: 4rem 0 2rem;
+      color: var(--cream);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo {
+      color: var(--cream);
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-size: .9rem;
+      opacity: .6;
+      line-height: 1.7;
+      max-width: 28ch;
+    }
+    .footer-social {
+      display: flex;
+      gap: .65rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border: 1.5px solid rgba(251,244,232,.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(251,244,232,.75);
+      transition: var(--transition);
+    }
+    .footer-social a svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-social a:hover {
+      background: var(--blush);
+      border-color: var(--blush);
+      color: var(--cocoa);
+      transform: translateY(-2px);
+    }
+    .footer-col-title {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: .5;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: .65rem; }
+    .footer-links a {
+      font-size: .9rem;
+      opacity: .6;
+      transition: opacity var(--transition);
+    }
+    .footer-links a:hover { opacity: 1; }
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(251,244,232,.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: .8rem;
+      opacity: .45;
+    }
+    .footer-badge {
+      display: flex;
+      align-items: center;
+    }
+    .footer-badge a { display: flex; align-items: center; }
+    .footer-badge img {
+      height: 32px;
+      width: auto;
+      opacity: .7;
+      transition: opacity .2s ease;
+    }
+    .footer-badge img:hover { opacity: 1; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .brands-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 70px;
+      }
+      .hero-image-wrap {
+        height: 60vw;
+        min-height: 320px;
+        max-height: 480px;
+        padding: 1.5rem;
+        order: -1;
+      }
+      .hero-photo-blob {
+        width: min(300px, 80%);
+      }
+      .hero-badge-1 { left: 0; top: 15%; }
+      .hero-badge-2 { right: 0; }
+      .hero-content {
+        padding: 2rem 1.5rem 3rem;
+        text-align: center;
+      }
+      .hero-eyebrow { justify-content: center; }
+      .hero-sub { margin: 0 auto 2rem; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-wrap { order: -1; }
+      .about-accent-card { right: 0; top: 50%; transform: translateY(-50%); }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .hero-headline { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.25rem; }
+      .hero-stat-num { font-size: 1.3rem; }
+      .hero-badge { display: none; }
+    }
+
+    /* ─── SKIP NAV (WCAG 2.1) ───────────────────────────────── */
+    .skip-nav {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--cocoa);
+      color: var(--cream);
+      padding: .5rem 1rem;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      font-size: .85rem;
+      z-index: 999;
+      transition: top .2s;
+    }
+    .skip-nav:focus { top: 0; }
+
+    /* ─── COOKIE BANNER (PECR / UK GDPR) ────────────────────── */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--cocoa);
+      color: var(--cream);
+      z-index: 500;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 -4px 30px rgba(90,52,69,.25);
+      transform: translateY(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cookie-text {
+      flex: 1;
+      font-size: .82rem;
+      line-height: 1.5;
+      opacity: .9;
+    }
+    .cookie-link { color: var(--blush); text-decoration: underline; }
+    .cookie-actions { display: flex; gap: .75rem; flex-shrink: 0; }
+    .btn-cookie {
+      padding: .6rem 1.25rem;
+      border-radius: 99px;
+      font-size: .82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1.5px solid rgba(251,244,232,.4);
+      transition: var(--transition);
+    }
+    .btn-cookie-reject { background: transparent; color: var(--cream); }
+    .btn-cookie-reject:hover { background: rgba(251,244,232,.1); }
+    .btn-cookie-accept { background: var(--blush); color: var(--cocoa); border-color: var(--blush); }
+    .btn-cookie-accept:hover { background: #ec97b0; }
+
+    /* ─── MODALS (Privacy / Cookie Policy) ──────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(90,52,69,.5);
+      z-index: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .modal-box {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      max-width: 680px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(90,52,69,.1);
+      color: var(--cocoa);
+      font-size: .9rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+    }
+    .modal-close:hover { background: var(--blush); }
+    .modal-title { font-family: var(--ff-head); font-size: 1.8rem; font-weight: 400; color: var(--cocoa); margin-bottom: .25rem; }
+    .modal-updated { font-size: .78rem; opacity: .5; margin-bottom: 1.5rem; }
+    .modal-body h3 { font-family: var(--ff-head); font-size: 1.1rem; font-weight: 500; margin: 1.25rem 0 .4rem; color: var(--cocoa); }
+    .modal-body p { font-size: .875rem; line-height: 1.65; opacity: .8; margin-bottom: .75rem; }
+    .modal-body a { color: var(--cocoa-light); text-decoration: underline; }
+    .cookie-table { width: 100%; border-collapse: collapse; font-size: .8rem; margin: .75rem 0; }
+    .cookie-table th, .cookie-table td { padding: .5rem .75rem; text-align: left; border-bottom: 1px solid rgba(90,52,69,.1); }
+    .cookie-table th { font-weight: 600; background: rgba(90,52,69,.05); }
+    .cookie-table a { color: var(--cocoa-light); }
+    @media (max-width: 768px) {
+      .cookie-banner-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .modal-box { padding: 1.75rem 1.25rem; }
+    }
+
+    /* ─── SCROLL PROGRESS ────────────────────────────────────── */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--blush), var(--yellow));
+      z-index: 200;
+      width: 0%;
+      transition: width .1s linear;
+    }
+
+    /* ─── BACK TO TOP ────────────────────────────────────────── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 48px; height: 48px;
+      background: var(--cocoa);
+      color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+      box-shadow: var(--shadow);
+      z-index: 50;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .back-to-top:hover { transform: translateY(-3px); background: var(--cocoa-light); }
+
+    /* ─── FORM DATA NOTICE ───────────────────────────────────── */
+    .form-data-notice {
+      font-size: .75rem;
+      opacity: .55;
+      margin-top: .75rem;
+      line-height: 1.5;
+    }
+    .form-data-notice a { color: var(--cocoa); text-decoration: underline; }
+
+  </style>
+</head>
+<body>
+
+<!-- Skip navigation (WCAG 2.1 / Equality Act 2010) -->
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ─── COOKIE CONSENT BANNER (PECR / UK GDPR) ──────────────── -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-banner-inner">
+    <div class="cookie-text">
+      <strong>This site uses cookies.</strong>
+      Embedded content from Instagram and TikTok may set third-party cookies. By clicking "Accept all" you consent to these cookies being stored on your device. You can also choose essential cookies only — embedded content will not load.
+      <a href="#" onclick="showPrivacyModal(event)" class="cookie-link">Privacy Policy</a> ·
+      <a href="#" onclick="showCookiePolicy(event)" class="cookie-link">Cookie Policy</a>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-cookie btn-cookie-reject" onclick="cookieReject()">Essential only</button>
+      <button class="btn-cookie btn-cookie-accept" onclick="cookieAccept()">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PRIVACY POLICY MODAL (UK GDPR) ──────────────────────── -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" style="display:none;">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacyModal')" aria-label="Close privacy policy">✕</button>
+    <h2 class="modal-title">Privacy Policy</h2>
+    <p class="modal-updated">Last updated: June 2026</p>
+    <div class="modal-body">
+      <h3>Who we are</h3>
+      <p>This website is operated by Sophia Ferrari-Wills trading as This Colourful Nest, based in Cambridgeshire, UK. Contact: <a href="mailto:thiscolourfulnest@gmail.com">thiscolourfulnest@gmail.com</a></p>
+
+      <h3>What data we collect</h3>
+      <p>When you submit the contact form, we collect your name, email address, company name, and the message you send. This data is used solely to respond to your enquiry.</p>
+
+      <h3>Legal basis for processing</h3>
+      <p>We process your personal data on the basis of <strong>legitimate interests</strong> (responding to your business enquiry). We do not use your data for marketing without your explicit consent.</p>
+
+      <h3>How long we keep your data</h3>
+      <p>Enquiry data is retained for no longer than 12 months, after which it is deleted.</p>
+
+      <h3>Third-party services</h3>
+      <p>With your consent, this site embeds content from Instagram (Meta Platforms Ireland Ltd) and TikTok (TikTok Technology Limited). These platforms may set cookies and process your data under their own privacy policies. You can withdraw consent at any time by clearing your browser cookies and declining on revisit.</p>
+
+      <h3>Your rights under UK GDPR</h3>
+      <p>You have the right to access, correct, or erase personal data we hold about you. To exercise these rights, contact us at <a href="mailto:thiscolourfulnest@gmail.com">thiscolourfulnest@gmail.com</a>. You also have the right to lodge a complaint with the <a href="https://ico.org.uk" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>.</p>
+
+      <h3>Cookies</h3>
+      <p>See our <a href="#" onclick="showCookiePolicy(event)">Cookie Policy</a> for full details.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COOKIE POLICY MODAL ──────────────────────────────────── -->
+<div class="modal-overlay" id="cookieModal" role="dialog" aria-modal="true" aria-label="Cookie Policy" style="display:none;">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('cookieModal')" aria-label="Close cookie policy">✕</button>
+    <h2 class="modal-title">Cookie Policy</h2>
+    <p class="modal-updated">Last updated: June 2026</p>
+    <div class="modal-body">
+      <h3>Essential cookies</h3>
+      <p>We store your cookie consent preference in your browser's local storage. This is essential for the site to remember your choice and does not track you.</p>
+
+      <h3>Third-party cookies (consent required)</h3>
+      <p>If you accept all cookies, embedded content from the following platforms may set tracking cookies on your device:</p>
+      <table class="cookie-table">
+        <tr><th>Provider</th><th>Purpose</th><th>Policy</th></tr>
+        <tr><td>Instagram / Meta</td><td>Embedded Reels player, analytics</td><td><a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">View</a></td></tr>
+        <tr><td>TikTok</td><td>Embedded video player, analytics</td><td><a href="https://www.tiktok.com/legal/page/eea/privacy-policy/en" target="_blank" rel="noopener">View</a></td></tr>
+      </table>
+
+      <h3>Managing cookies</h3>
+      <p>You can withdraw consent at any time by clearing your browser cookies. You can also manage cookies through your browser settings. For more information, visit <a href="https://ico.org.uk/for-the-public/online/cookies/" target="_blank" rel="noopener">the ICO's guidance on cookies</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Work With Me</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</nav>
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo script">This Colourful Nest</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Work With Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">Get in Touch 🎀</a>
+      </div>
+      <div class="nav-socials">
+        <!-- Instagram -->
+        <a href="https://instagram.com/thiscolourfulnest" class="nav-social-link" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <!-- TikTok -->
+        <a href="https://tiktok.com/@thiscolourfulnest" class="nav-social-link" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+        </a>
+        <!-- Threads -->
+        <a href="https://threads.com/@thiscolourfulnest" class="nav-social-link" target="_blank" rel="noopener" aria-label="Threads">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 8.87c1.04-1.667 2.71-2.585 4.82-2.585h.04c3.427.019 5.5 2.11 5.785 5.83.056.73.053 1.514-.006 2.287.29.19.556.402.797.63 1.405 1.33 2.116 3.138 1.84 5.153-.317 2.337-1.763 4.278-4.064 5.449C15.158 23.647 13.746 24 12.186 24zm.024-10.928c-.061 0-.12.001-.182.004-1.937.112-2.857.98-2.815 2.581.019.7.333 1.21.934 1.518.757.395 1.72.383 2.601-.033.965-.455 1.554-1.361 1.752-2.694a11.56 11.56 0 00-1.615-.368 9.314 9.314 0 00-.675-.008z"/></svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@thiscolourfulnesthome" class="nav-social-link" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <!-- Pinterest -->
+        <a href="https://pinterest.com/thiscolourfulnest" class="nav-social-link" target="_blank" rel="noopener" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
+<main id="main-content">
+<section class="hero" id="home">
+  <div class="hero-content container" style="padding-left: max(1.5rem, calc((100vw - 1200px)/2 + 1.5rem)); padding-right: 1.5rem;">
+    <div class="hero-eyebrow reveal">
+      <span class="bow">🎀</span>
+      <span class="section-label">Cambridgeshire, UK · 715K Followers</span>
+    </div>
+    <h1 class="hero-headline reveal reveal-delay-1">
+      Life is too short
+      <em>for beige.</em>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      Hi, I'm Sophia — content creator, stylist, and the woman behind 715K followers who collectively refuse to paint their walls magnolia.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#services" class="btn btn-primary">Work With Me 🎀</a>
+      <a href="#about" class="btn btn-outline">Welcome to the Nest</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div>
+        <div class="hero-stat-num">715K</div>
+        <div class="hero-stat-label">Instagram</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">130K</div>
+        <div class="hero-stat-label">TikTok</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">950K+</div>
+        <div class="hero-stat-label">Total Reach</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-photo-blob">
+      <!-- Add sophia-hero.jpg to this folder to activate -->
+      <img src="sophia-hero.jpg" alt="Sophia Ferrari-Wills — This Colourful Nest"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-fallback" style="display:none; flex-direction:column; gap:.5rem; text-align:center; color:rgba(90,52,69,.55);">
+        <span style="font-size:4rem;">🎀</span>
+        <span style="font-family:var(--ff-head); font-size:1.1rem; font-style:italic;">Sophia Ferrari-Wills</span>
+        <span style="font-size:.8rem; opacity:.7;">Add sophia-hero.jpg to activate</span>
+      </div>
+    </div>
+
+    <!-- Floating badges -->
+  </div>
+</section>
+
+<!-- ─── PRESS BAR ─────────────────────────────────────────────── -->
+<div class="press-bar">
+  <div class="press-bar-inner">
+    <div class="press-track">
+      <span class="press-item">Newsweek</span>
+      <span class="press-item">Stylist</span>
+      <span class="press-item">My Baba</span>
+      <span class="press-item">Bert &amp; May</span>
+      <span class="press-item">STORI Kitchens</span>
+      <span class="press-item">CoventryLive</span>
+      <span class="press-item">ufurnish.com</span>
+      <!-- duplicate for seamless loop -->
+      <span class="press-item">Newsweek</span>
+      <span class="press-item">Stylist</span>
+      <span class="press-item">My Baba</span>
+      <span class="press-item">Bert &amp; May</span>
+      <span class="press-item">STORI Kitchens</span>
+      <span class="press-item">CoventryLive</span>
+      <span class="press-item">ufurnish.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-card">
+          <img src="sophia-about.jpg" alt="Sophia Ferrari-Wills painting her staircase banisters in multicolour stripes" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <div class="about-img-inner">
+            <p class="about-img-quote">"I'm terribly impulsive if there's a colour I'm really keen on."</p>
+          </div>
+        </div>
+        <div class="about-accent-card">
+          <div class="about-accent-num">2020</div>
+          <div class="about-accent-text">When it all started — one pink living room and a whole lot of courage</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label reveal">The Story</span>
+        <h2 class="about-heading reveal reveal-delay-1">
+          From midwife to<br>
+          <em>maximalist creator</em>
+        </h2>
+        <p class="about-body reveal reveal-delay-2">
+          In March 2020 I moved into our 1960s Cambridgeshire cottage, took one look at the magnolia living room, and reached for the pink paint. I had no idea it would change everything.
+        </p>
+        <p class="about-body reveal reveal-delay-2">
+          Farrow &amp; Ball reshared my photo. Then it cascaded. By April 2021 I'd reached 310K followers and made the leap from NHS midwife to full-time creator. Now I'm here with 715K of you, and we're all in it together — the bolder, the better.
+        </p>
+        <p class="about-body reveal reveal-delay-3">
+          My home is my canvas and my business. It's also the place where my husband Chris says no (a lot), and where Clemmie and Minnie have the most joyful, colourful childhood I can give them. More is more, and we're not sorry.
+        </p>
+        <a href="#services" class="btn btn-primary reveal reveal-delay-4">Work With Me 🎀</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="container services-inner">
+    <div class="section-header reveal">
+      <span class="section-label">What I Offer</span>
+      <h2 class="section-heading">Let's create something<br><em>beautifully colourful</em> together</h2>
+      <p class="section-sub">Whether you're a brand looking for content that genuinely stops the scroll, or a business wanting to reach 715K engaged colour lovers — here's how we can work together.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-icon">📸</span>
+        <h3 class="service-name">Instagram Content Creation</h3>
+        <p class="service-desc">Sponsored posts, Reels, and Stories delivered to your brief — shot in the most colourful home in Cambridgeshire. High engagement, genuine advocacy, and a highly visual aesthetic that gets saved and shared.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-icon">🎬</span>
+        <h3 class="service-name">UGC Creation</h3>
+        <p class="service-desc">Not all content needs to go on my feed. I create styled photos and videos for brands to use in their own paid advertising — no post required. Your brief, my creative direction, your assets to keep.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-icon">🏡</span>
+        <h3 class="service-name">Location Hire</h3>
+        <p class="service-desc">My home is available to hire as a shoot location. Think mermaid bathroom, ice cream office, pink front door, and a treehouse. A fully styled, maximalist set that's already photoshoot-ready.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-icon">🌸</span>
+        <h3 class="service-name">Product Styling</h3>
+        <p class="service-desc">I have an instinct for colour and composition. Flat-lays, in-situ shots, before-and-afters — your products styled and photographed in context that makes people want to buy them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ──────────────────────────────────────────────────── -->
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="stats-header reveal">
+      <span class="section-label" style="display:block;margin-bottom:1rem;">The Numbers</span>
+      <h2 class="section-heading">A highly engaged audience<br>of <em>colour-curious homemakers</em></h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card stat-card-highlight reveal">
+        <div class="stat-platform">Instagram</div>
+        <div class="stat-number">715K</div>
+        <div class="stat-detail">Followers · Near-daily posting</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-platform">TikTok</div>
+        <div class="stat-number">130K</div>
+        <div class="stat-detail">Followers · 5M+ Total Likes</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-platform">Threads</div>
+        <div class="stat-number">104K</div>
+        <div class="stat-detail">Followers · Daily conversation</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-platform">Combined Reach</div>
+        <div class="stat-number">950K+</div>
+        <div class="stat-detail">Across all platforms</div>
+      </div>
+    </div>
+
+    <p class="stats-note reveal">Audience skews UK · Female 75–80% · Age 25–45 · Homeowners &amp; active decorators</p>
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO ──────────────────────────────────────────────── -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="display:block;margin-bottom:1rem;">Portfolio</span>
+      <h2 class="section-heading">The home that started<br><em>a movement</em></h2>
+      <p class="section-sub">Every corner is styled, shot, and loved. A real family home — not a showroom. That's the magic.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Instagram Reel: Powder room reveal (new house, early 2024) -->
+      <div class="ig-embed-wrap reveal">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C3R1rQkqpFd/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:1rem;margin:0;max-width:100%;min-width:100%;padding:0;">
+          <a href="https://www.instagram.com/reel/C3R1rQkqpFd/" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">Powder room reveal</span>
+          </a>
+        </blockquote>
+      </div>
+
+      <!-- Instagram Reel: "Love Hearts" -->
+      <div class="ig-embed-wrap reveal reveal-delay-1">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/CngfAvLOBg1/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:1rem;margin:0;max-width:100%;min-width:100%;padding:0;">
+          <a href="https://www.instagram.com/reel/CngfAvLOBg1/" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">Love Hearts Reel</span>
+          </a>
+        </blockquote>
+      </div>
+
+      <!-- Instagram Reel: "Pink Checks" sponsored -->
+      <div class="ig-embed-wrap reveal reveal-delay-2">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/C6S8kRyqKOP/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:1rem;margin:0;max-width:100%;min-width:100%;padding:0;">
+          <a href="https://www.instagram.com/reel/C6S8kRyqKOP/" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">Pink Checks Reel</span>
+          </a>
+        </blockquote>
+      </div>
+
+      <!-- Instagram Reel: "About Me" intro -->
+      <div class="ig-embed-wrap reveal reveal-delay-1">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/CrKsQivKFCZ/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:1rem;margin:0;max-width:100%;min-width:100%;padding:0;">
+          <a href="https://www.instagram.com/reel/CrKsQivKFCZ/" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">About Me Reel</span>
+          </a>
+        </blockquote>
+      </div>
+
+      <!-- TikTok: "Make it pink!!!" pink fridge/kitchen DIY (~60K likes) -->
+      <div class="ig-embed-wrap reveal reveal-delay-2">
+        <blockquote class="tiktok-embed"
+          cite="https://www.tiktok.com/@thiscolourfulnest/video/7187086931291868422"
+          data-video-id="7187086931291868422"
+          style="max-width:100%;min-width:100%;border:0;margin:0;">
+          <a href="https://www.tiktok.com/@thiscolourfulnest/video/7187086931291868422" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">Make it pink! TikTok</span>
+          </a>
+        </blockquote>
+      </div>
+
+      <!-- Instagram Reel: "Pink Pudding" 2025 -->
+      <div class="ig-embed-wrap reveal reveal-delay-3">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DF2CCXRqjIx/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:1rem;margin:0;max-width:100%;min-width:100%;padding:0;">
+          <a href="https://www.instagram.com/reel/DF2CCXRqjIx/" target="_blank" rel="noopener"
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:420px;gap:.75rem;text-decoration:none;color:var(--cocoa);font-family:var(--ff-body);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--blush)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <span style="font-size:.85rem;opacity:.6;">Pink Pudding Reel</span>
+          </a>
+        </blockquote>
+      </div>
+
+    </div>
+
+    <div class="portfolio-cta reveal">
+      <a href="#contact" class="btn btn-primary">Work With Me 🎀</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BRANDS ────────────────────────────────────────────────── -->
+<section class="brands" id="brands">
+  <div class="container brands-inner">
+    <div class="section-header reveal">
+      <span class="section-label" style="display:block;margin-bottom:1rem;">Brand Collaborations</span>
+      <h2 class="section-heading">Trusted by the brands<br><em>colour lovers love</em></h2>
+    </div>
+
+    <div class="brands-grid">
+      <div class="brand-card reveal">
+        <img src="https://storicollection.com/wp-content/uploads/sites/2/2024/04/STORI-logo-black-A.png" alt="STORI Kitchens">
+      </div>
+      <div class="brand-card reveal reveal-delay-1">
+        <img src="https://cdn.shopify.com/s/files/1/1721/0301/files/Bert_and_May-logo-horizontal.png?v=1738424943" alt="Bert &amp; May">
+      </div>
+      <div class="brand-card reveal reveal-delay-2">
+        <img src="stokke_logo.jpg" alt="Stokke">
+      </div>
+      <div class="brand-card reveal reveal-delay-3">
+        <img src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/logo-square-letter.png" alt="Samsung">
+      </div>
+      <div class="brand-card reveal">
+        <img src="https://www.littlegreene.com/static/version1780958314/frontend/Cti/lg-gb-theme/en_GB/images/logo.svg" alt="Little Greene">
+      </div>
+      <div class="brand-card reveal reveal-delay-1">
+        <img src="https://www.burlingtonbathrooms.com/Themes/Burlington/Content/Images/svg/logo.svg" alt="Burlington Bathrooms">
+      </div>
+      <div class="brand-card reveal reveal-delay-2">
+        <img src="armacmartin_logo.jpg" alt="Armac Martin">
+      </div>
+      <div class="brand-card reveal reveal-delay-3">
+        <img src="https://www.eleanorbowmer.com/cdn/shop/files/website_logo_dcdb57d3-288c-4c7a-a1ba-bd9e44319823_1457x562.jpg?v=1628160737" alt="Eleanor Bowmer">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AWARD BANNER ──────────────────────────────────────────── -->
+<div class="award-banner">
+  <div class="container">
+    <div class="award-inner reveal">
+      <div class="award-icon">🏆</div>
+      <div>
+        <p class="award-heading">"Most Fun Home Accessory"</p>
+        <p class="award-sub">ufurnish.com Home Awards 2024 · As featured in Stylist Magazine · Kimpton Fitzroy Hotel, London</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TESTIMONIAL ───────────────────────────────────────────── -->
+<section class="testimonial">
+  <div class="container">
+    <span class="testimonial-quote-mark">&ldquo;</span>
+    <p class="testimonial-text reveal">
+      She bridges the gap between aspirational and achievable. Her audience doesn't just watch — they act.
+    </p>
+    <p class="testimonial-attribution reveal reveal-delay-1">— What every brand manager thinks after the first collab</p>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-content">
+        <span class="section-label reveal">Get in Touch</span>
+        <h2 class="contact-heading reveal reveal-delay-1">
+          Let's make something<br>
+          <em>wonderfully colourful</em>
+        </h2>
+        <p class="contact-body reveal reveal-delay-2">
+          Whether you're a brand, a PR agency, or a fellow colour lover — I'd love to hear from you. Fill in the form and I'll be back in touch as soon as I can (usually between wallpaper decisions).
+        </p>
+
+        <div class="contact-options reveal reveal-delay-3">
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <!-- Email -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <span>thiscolourfulnest@gmail.com</span>
+          </div>
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <!-- Location pin -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            </div>
+            <span>Based in Cambridgeshire, UK</span>
+          </div>
+          <div class="contact-option">
+            <div class="contact-option-icon">
+              <!-- Instagram -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <span>@thiscolourfulnest · all platforms</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input class="form-input" id="name" type="text" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company</label>
+              <input class="form-input" id="company" type="text" placeholder="Brand / Agency">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" type="email" placeholder="jane@brandname.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="type">Type of Enquiry</label>
+            <select class="form-select" id="type">
+              <option value="">Select an option…</option>
+              <option>Instagram / Reel / Sponsored Post</option>
+              <option>UGC Content Creation</option>
+              <option>Location Hire</option>
+              <option>Product Styling</option>
+              <option>Press / Media</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" placeholder="Tell me about your brand and what you have in mind…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Send Enquiry 🎀</button>
+          <p class="form-data-notice">By submitting this form you agree that your name, email and message will be used to respond to your enquiry. Your data will not be shared with third parties or used for marketing. <a href="#" onclick="showPrivacyModal(event)">Privacy Policy</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo script">This Colourful Nest</span>
+        <p class="footer-tagline">A home, a brand, and 715K reasons to be brave with colour. Based in Cambridgeshire, UK.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thiscolourfulnest" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@thiscolourfulnest" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+          </a>
+          <a href="https://threads.com/@thiscolourfulnest" target="_blank" rel="noopener" aria-label="Threads">
+            <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 8.87c1.04-1.667 2.71-2.585 4.82-2.585h.04c3.427.019 5.5 2.11 5.785 5.83.056.73.053 1.514-.006 2.287.29.19.556.402.797.63 1.405 1.33 2.116 3.138 1.84 5.153-.317 2.337-1.763 4.278-4.064 5.449C15.158 23.647 13.746 24 12.186 24zm.024-10.928c-.061 0-.12.001-.182.004-1.937.112-2.857.98-2.815 2.581.019.7.333 1.21.934 1.518.757.395 1.72.383 2.601-.033.965-.455 1.554-1.361 1.752-2.694a11.56 11.56 0 00-1.615-.368 9.314 9.314 0 00-.675-.008z"/></svg>
+          </a>
+          <a href="https://youtube.com/@thiscolourfulnesthome" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://pinterest.com/thiscolourfulnest" target="_blank" rel="noopener" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#about">About Sophia</a></li>
+          <li><a href="#services">Work With Me</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#brands">Brand Partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="#services">Instagram Content</a></li>
+          <li><a href="#services">UGC Creation</a></li>
+          <li><a href="#services">Location Hire</a></li>
+          <li><a href="#services">Product Styling</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 This Colourful Nest · Sophia Ferrari-Wills · All rights reserved ·
+        <a href="#" onclick="showPrivacyModal(event)" style="opacity:.6;text-decoration:underline;">Privacy Policy</a> ·
+        <a href="#" onclick="showCookiePolicy(event)" style="opacity:.6;text-decoration:underline;">Cookie Policy</a> ·
+        <a href="#" onclick="showCookieBanner(event)" style="opacity:.6;text-decoration:underline;">Cookie Settings</a>
+      </p>
+      <div class="footer-badge">
+        <a href="https://www.HansaNeuron.com" target="_blank" rel="noopener" aria-label="Website by HansaNeuron">
+          <img src="HansaNeuron_Icon_transparent.png" alt="HansaNeuron">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ─── SCROLL BEHAVIOURS ──────────────────────────────────────── */
+  const nav = document.getElementById('nav');
+  const scrollProgress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (scrollY / docHeight) * 100;
+
+    scrollProgress.style.width = pct + '%';
+    nav.classList.toggle('scrolled', scrollY > 60);
+    backToTop.classList.toggle('visible', scrollY > 400);
+  }, { passive: true });
+
+  /* ─── REVEAL ON SCROLL ──────────────────────────────────────── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ─── MOBILE MENU ───────────────────────────────────────────── */
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('hamburger');
+    const isOpen = menu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ─── FORM SUBMIT ───────────────────────────────────────────── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Sent! I\'ll be in touch soon 🎀';
+    btn.style.background = 'var(--sage)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry 🎀';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  /* ─── SMOOTH ANCHOR SCROLL ──────────────────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = 70;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    });
+  });
+</script>
+<!-- Embed scripts loaded only after cookie consent (PECR / UK GDPR) -->
+<script>
+  const CONSENT_KEY = 'tcn_cookie_consent';
+
+  function cookieAccept() {
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    hideBanner();
+    loadEmbeds();
+  }
+
+  function cookieReject() {
+    localStorage.setItem(CONSENT_KEY, 'rejected');
+    hideBanner();
+  }
+
+  function hideBanner() {
+    document.getElementById('cookieBanner').classList.remove('visible');
+  }
+
+  function showCookieBanner(e) {
+    if (e) e.preventDefault();
+    document.getElementById('cookieBanner').classList.add('visible');
+  }
+
+  function showPrivacyModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById('privacyModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showCookiePolicy(e) {
+    if (e) e.preventDefault();
+    document.getElementById('cookieModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close modals on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(el => {
+    el.addEventListener('click', function(e) {
+      if (e.target === this) closeModal(this.id);
+    });
+  });
+
+  // Close modals on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay').forEach(m => {
+        if (m.style.display !== 'none') closeModal(m.id);
+      });
+    }
+  });
+
+  function loadEmbeds() {
+    // Instagram
+    if (!document.querySelector('script[src*="instagram.com/embed"]')) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(s);
+    } else if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
+    // TikTok
+    if (!document.querySelector('script[src*="tiktok.com/embed"]')) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.tiktok.com/embed.js';
+      document.body.appendChild(s);
+    }
+  }
+
+  // On page load — check existing consent
+  window.addEventListener('DOMContentLoaded', () => {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    if (!consent) {
+      // Show banner after short delay
+      setTimeout(() => document.getElementById('cookieBanner').classList.add('visible'), 800);
+    } else if (consent === 'accepted') {
+      loadEmbeds();
+    }
+    // If rejected: embeds never load
+  });
+</script>
+</body>
+</html>

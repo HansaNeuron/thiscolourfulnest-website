@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brand Logo Preview</title>
+<style>
+  body { font-family: sans-serif; background: #FBF4E8; padding: 2rem; }
+  h1 { color: #5A3445; margin-bottom: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    min-height: 120px;
+  }
+  .card img {
+    max-width: 140px;
+    max-height: 60px;
+    object-fit: contain;
+  }
+  .card .name { font-size: .75rem; color: #5A3445; opacity: .6; text-align: center; }
+  .card .status { font-size: .65rem; padding: .2rem .5rem; border-radius: 4px; }
+  .ok { background: #d4edda; color: #155724; }
+  .fail { background: #f8d7da; color: #721c24; }
+</style>
+</head>
+<body>
+<h1>Brand Logo Preview — @thiscolourfulnest</h1>
+<div class="grid">
+
+  <div class="card">
+    <img src="https://storicollection.com/wp-content/uploads/sites/2/2024/04/STORI-logo-black-A.png"
+      alt="STORI"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok" id="stori">✓ loaded</span>
+    <div class="name">STORI Kitchens</div>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn.shopify.com/s/files/1/1721/0301/files/Bert_and_May-logo-horizontal.png?v=1738424943"
+      alt="Bert & May"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok">✓ loaded</span>
+    <div class="name">Bert &amp; May</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/logo-square-letter.png"
+      alt="Samsung"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok">✓ loaded</span>
+    <div class="name">Samsung</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.littlegreene.com/static/version1780958314/frontend/Cti/lg-gb-theme/en_GB/images/logo.svg"
+      alt="Little Greene"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok">✓ loaded</span>
+    <div class="name">Little Greene</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.burlingtonbathrooms.com/Themes/Burlington/Content/Images/svg/logo.svg"
+      alt="Burlington"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok">✓ loaded</span>
+    <div class="name">Burlington Bathrooms</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.eleanorbowmer.com/cdn/shop/files/website_logo_dcdb57d3-288c-4c7a-a1ba-bd9e44319823_1457x562.jpg?v=1628160737"
+      alt="Eleanor Bowmer"
+      onerror="this.style.display='none';this.nextElementSibling.className='status fail'">
+    <span class="status ok">✓ loaded</span>
+    <div class="name">Eleanor Bowmer</div>
+  </div>
+
+  <div class="card" style="background:#f8f8f8;">
+    <div style="font-size:2rem;">🔍</div>
+    <span class="status fail">JS-rendered — needs manual download</span>
+    <div class="name">Stokke</div>
+  </div>
+
+  <div class="card" style="background:#f8f8f8;">
+    <div style="font-size:2rem;">🔍</div>
+    <span class="status fail">JS-rendered — needs manual download</span>
+    <div class="name">Armac Martin</div>
+  </div>
+
+</div>
+<p style="margin-top:2rem;color:#5A3445;opacity:.6;font-size:.8rem;">
+  Green = logo loaded from brand website · Red = could not be fetched automatically<br>
+  For Stokke and Armac Martin, visit their websites, right-click the logo → Save Image, then drop the files into the client folder.
+</p>
+</body>
+</html>
