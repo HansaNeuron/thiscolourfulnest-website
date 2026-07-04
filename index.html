@@ -1825,24 +1825,27 @@
       </div>
 
       <div class="contact-form-wrap reveal reveal-delay-1">
-        <form onsubmit="handleSubmit(event)">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <!-- Honeypot field (hidden from real users, catches bots) -->
+          <input type="text" id="website" name="website" style="display:none; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off">
+
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="name">Your Name</label>
-              <input class="form-input" id="name" type="text" placeholder="Jane Smith" required>
+              <input class="form-input" id="name" name="name" type="text" placeholder="Jane Smith" required>
             </div>
             <div class="form-group">
               <label class="form-label" for="company">Company</label>
-              <input class="form-input" id="company" type="text" placeholder="Brand / Agency">
+              <input class="form-input" id="company" name="company" type="text" placeholder="Brand / Agency">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
-            <input class="form-input" id="email" type="email" placeholder="jane@brandname.com" required>
+            <input class="form-input" id="email" name="email" type="email" placeholder="jane@brandname.com" required>
           </div>
           <div class="form-group">
             <label class="form-label" for="type">Type of Enquiry</label>
-            <select class="form-select" id="type">
+            <select class="form-select" id="type" name="type">
               <option value="">Select an option…</option>
               <option>Instagram / Reel / Sponsored Post</option>
               <option>UGC Content Creation</option>
@@ -1854,10 +1857,11 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Message</label>
-            <textarea class="form-textarea" id="message" placeholder="Tell me about your brand and what you have in mind…" required></textarea>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your brand and what you have in mind…" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary form-submit">Send Enquiry 🎀</button>
           <p class="form-data-notice">By submitting this form you agree that your name, email and message will be used to respond to your enquiry. Your data will not be shared with third parties or used for marketing. <a href="#" onclick="showPrivacyModal(event)">Privacy Policy</a>.</p>
+          <p id="formMessage" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem; text-align: center;"></p>
         </form>
       </div>
     </div>
@@ -1965,18 +1969,61 @@
   }
 
   /* ─── FORM SUBMIT ───────────────────────────────────────────── */
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Sent! I\'ll be in touch soon 🎀';
-    btn.style.background = 'var(--sage)';
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const messageEl = form.querySelector('#formMessage');
+
+    // Disable button and show loading state
     btn.disabled = true;
-    setTimeout(() => {
+    btn.textContent = 'Sending…';
+    messageEl.style.display = 'none';
+
+    try {
+      // Create FormData from the form
+      const formData = new FormData(form);
+
+      // Send to Cloudflare Worker
+      const response = await fetch('/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Success
+        btn.textContent = '✓ Sent! I\'ll be in touch soon 🎀';
+        btn.style.background = 'var(--sage)';
+        messageEl.style.color = 'var(--sage)';
+        messageEl.textContent = 'Thank you! Check your email for confirmation.';
+        messageEl.style.display = 'block';
+        form.reset();
+
+        // Reset button after 5 seconds
+        setTimeout(() => {
+          btn.textContent = 'Send Enquiry 🎀';
+          btn.style.background = '';
+          btn.disabled = false;
+          messageEl.style.display = 'none';
+        }, 5000);
+      } else {
+        // Error
+        btn.textContent = 'Send Enquiry 🎀';
+        btn.disabled = false;
+        messageEl.style.color = '#d32f2f';
+        messageEl.textContent = result.error || 'Something went wrong. Please try again.';
+        messageEl.style.display = 'block';
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       btn.textContent = 'Send Enquiry 🎀';
-      btn.style.background = '';
       btn.disabled = false;
-      e.target.reset();
-    }, 4000);
+      messageEl.style.color = '#d32f2f';
+      messageEl.textContent = 'Network error. Please check your connection and try again.';
+      messageEl.style.display = 'block';
+    }
   }
 
   /* ─── SMOOTH ANCHOR SCROLL ──────────────────────────────────── */
